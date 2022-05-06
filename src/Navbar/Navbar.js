@@ -6,6 +6,7 @@ import {Link,useHistory,useLocation} from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { LOGOUT } from "../constants/actionTypes";
 import decode from "jwt-decode"
+import { useCallback } from "react";
 
 const Navbar = () => {
     const classes = useStyles();
@@ -14,11 +15,11 @@ const Navbar = () => {
     const history = useHistory()
     const location = useLocation();
     // 注销
-    const logout = () => {
+    const logout = useCallback( () => {
         dispatch({type:LOGOUT});
         setUser(null);
         history.push('/');
-    }
+    },[dispatch,history])
     useEffect(()=>{
         const token =user?.token;
         // 檢查是否有token
@@ -30,7 +31,7 @@ const Navbar = () => {
             }
         }
         setUser(JSON.parse(localStorage.getItem('profile')))
-    },[location])
+    },[location,logout,user?.token])
     return <>
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
