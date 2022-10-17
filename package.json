@@ -1,6 +1,6 @@
 {
   "name": "memories-app",
-  "home":"https://JangYue.github.io/memories",
+  "homepage":"https://jangyue.github.io/memories",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
