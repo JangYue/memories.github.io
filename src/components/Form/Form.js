@@ -39,7 +39,7 @@ const Form = ({currentId,setCurrentId}) => {
         return (
             <Paper className={classes.paper}>
                 <Typography variant="h6" align="center">
-                    Please Sign In to create your own memories and like others memories.
+                    请登录创建你自己的动态分享,或者点赞你喜欢的动态.
                 </Typography>
             </Paper>
         )
@@ -58,11 +58,11 @@ const Form = ({currentId,setCurrentId}) => {
         <>
         <Paper className={classes.paper}>
             <form noValidate autoComplete="off"  onSubmit={(e)=>handleSubmit(e)} className={`${classes.root} ${classes.form}`}>
-                <Typography variant="h6"> {currentId?'Editing':'Creating'} a Memory</Typography>
+                <Typography variant="h6"> {currentId?'编辑':'创建'} 动态</Typography>
                   <TextField 
                     name="title" 
                     variant="outlined" 
-                    label="Title" 
+                    label="标题" 
                     fullWidth
                     value={postData.title}
                     onChange={(e) => setPostData({...postData,title:e.target.value})}
@@ -70,7 +70,7 @@ const Form = ({currentId,setCurrentId}) => {
                   <TextField 
                     name="message" 
                     variant="outlined" 
-                    label="Message" 
+                    label="内容" 
                     fullWidth
                     value={postData.message}
                     onChange={(e) => setPostData({...postData,message:e.target.value})}
@@ -78,7 +78,7 @@ const Form = ({currentId,setCurrentId}) => {
                  <TextField 
                     name="tags" 
                     variant="outlined" 
-                    label="Tags" 
+                    label="标签" 
                     fullWidth
                     value={postData.tags}
                     onChange={(e) => setPostData({...postData,tags:e.target.value.split(',')})}
@@ -91,8 +91,8 @@ const Form = ({currentId,setCurrentId}) => {
                         
                     />
                 </div>
-                <Button className={classes.buttonSubmit} variant="contained" color="primary" type="submit" size="large" fullWidth>Submit</Button>
-                <Button variant="text" color="default" size="small" onClick={clear} fullWidth>Clear</Button>
+                <Button className={classes.buttonSubmit} variant="contained" color="primary" type="submit" size="large" fullWidth>提交</Button>
+                <Button variant="text" color="default" size="small" onClick={clear} fullWidth>清除动态</Button>
             </form>
         </Paper>
         </>

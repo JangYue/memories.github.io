@@ -44,6 +44,7 @@ const Auth = () => {
         const result = res?.profileObj;
         const token = res?.tokenId;
         try{
+            console.log("登录")
             dispatch({type:'AUTH',data:{result,token}})
             // 登录成功后 重定向到首页
             history.push("/")
@@ -65,7 +66,7 @@ const Auth = () => {
                 <Avatar className={classes.avatar}>
                     <LockOutlinedIcon/>
                 </Avatar>
-                <Typography variant="h5">{isSignup ? 'Sign up' : 'Sign In'}</Typography>
+                <Typography variant="h5">{isSignup ? '注册' : '登录'}</Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
                         {
@@ -83,7 +84,7 @@ const Auth = () => {
                         
                     </Grid>
                     <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-                            {isSignup ? 'Sign Up' : 'Sign In'}
+                            {isSignup ? '注册' : '登录'}
                     </Button>
                     <GoogleLogin
                         clientId="GOOGLE ID"
@@ -98,7 +99,7 @@ const Auth = () => {
                                 variant="contained"
 
                             >
-                                    Google Sign In
+                                    使用谷歌登录
                             </Button>
                         )}
                         onSuccess={googleSuccess}
@@ -108,7 +109,7 @@ const Auth = () => {
                     <Grid container justify="flex-end">
                     <Grid item>
                     <Button onClick={switchMode}>
-                        { isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up" }
+                        { isSignup ? '您已经有账号了吗? 登录' : "还没有账号吗? 注册" }
                     </Button>
                     </Grid>
                     </Grid>

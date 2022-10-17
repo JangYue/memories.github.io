@@ -44,11 +44,11 @@ const Navbar = () => {
                         <div className={classes.profile}>
                             <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
                             <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>    
-                            <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
+                            <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>注销</Button>
                         </div>
                     )
                     :(
-                        <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+                        <Button component={Link} to="/auth" variant="contained" color="primary">登录</Button>
                     )
                 }
             </Toolbar>

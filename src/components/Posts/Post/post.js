@@ -18,13 +18,13 @@ const Post = ({post,setCurrentId}) => {
         if (post.likes.length > 0) {
           return post.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
             ? (
-              <><ThumbUpAltIcon fontSize="small" />&nbsp;{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}` }</>
+              <><ThumbUpAltIcon fontSize="small" />&nbsp;{post.likes.length > 2 ? `你和 ${post.likes.length - 1} 人` : `${post.likes.length} 喜欢${post.likes.length > 1 ? '' : ''}` }</>
             ) : (//既不是googleId也不是自定义Id 游客
-              <><ThumbUpAltOutlined fontSize="small" />&nbsp;{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</>
+              <><ThumbUpAltOutlined fontSize="small" />&nbsp;{post.likes.length} {post.likes.length === 1 ? '喜欢' : '喜欢'}</>
             );
         }
        // 如果你是第一个喜欢的人
-        return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
+        return <><ThumbUpAltOutlined fontSize="small" />&nbsp;喜欢</>;
       };
     return (
         <Card className={classes.card}>
@@ -58,7 +58,7 @@ const Post = ({post,setCurrentId}) => {
                     (user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
                         <Button size="small" color="primary" onClick={() => {dispatch(deletePost(post._id))}}>
                             <DeleteIcon fontSize="medium"/>
-                            &nbsp; Delete &nbsp;
+                            &nbsp; 删除 &nbsp;
                         </Button>
                     )
                 }
