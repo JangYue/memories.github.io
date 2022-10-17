@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe11ac7b.css",
-    "main.js": "/static/js/main.7d9d2ca0.js",
-    "static/media/memories.png": "/static/media/memories.cce9e8d557aa507ba0ee.png",
-    "index.html": "/index.html",
-    "main.fe11ac7b.css.map": "/static/css/main.fe11ac7b.css.map",
-    "main.7d9d2ca0.js.map": "/static/js/main.7d9d2ca0.js.map"
+    "main.css": "/memories.github.io/static/css/main.fe11ac7b.css",
+    "main.js": "/memories.github.io/static/js/main.3c32a543.js",
+    "static/media/memories.png": "/memories.github.io/static/media/memories.cce9e8d557aa507ba0ee.png",
+    "index.html": "/memories.github.io/index.html",
+    "main.fe11ac7b.css.map": "/memories.github.io/static/css/main.fe11ac7b.css.map",
+    "main.3c32a543.js.map": "/memories.github.io/static/js/main.3c32a543.js.map"
   },
   "entrypoints": [
     "static/css/main.fe11ac7b.css",
-    "static/js/main.7d9d2ca0.js"
+    "static/js/main.3c32a543.js"
   ]
 }
